@@ -56,6 +56,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> login() async {
+    
     await Future.delayed(const Duration(seconds: 3));
     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
       return Loginpage();
@@ -68,7 +69,8 @@ class _SplashScreenState extends State<SplashScreen> {
     if (userloggedin == null || userloggedin == false) {
       login();
     } else {
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (context) {
         return Homepage();
       }));
     }
